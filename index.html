@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anisha Kumari | React Native & Software Developer</title>
+  <meta name="description" content="Anisha Kumari — MCA graduate and React Native Developer with hands-on experience in Firebase, Django, and AI/ML. Building scalable mobile and web apps." />
+  <meta name="keywords" content="Anisha Kumari, React Native Developer, Software Engineer, Mobile Developer, MCA, Portfolio" />
+  <meta name="author" content="Anisha Kumari" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Anisha Kumari | React Native Developer" />
+  <meta property="og:description" content="MCA graduate crafting cross-platform mobile &amp; web applications." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== BACKGROUND CANVAS ===== -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Anisha Kumari - Home">
+        <span class="bracket">&lt;</span><span class="logo-text">AK</span><span class="bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#hero"        class="nav-link" data-section="hero">Home</a></li>
+        <li><a href="#about"       class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills"      class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#experience"  class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#projects"    class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#education"   class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#contact"     class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <span class="theme-icon" id="themeIcon" aria-hidden="true">☀️</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-container">
+
+      <!-- Left: Text Content -->
+      <div class="hero-text">
+        <div class="hero-badge" role="status">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>Available for opportunities</span>
+        </div>
+
+        <div class="hero-code-label" aria-hidden="true">
+          <span class="code-kw">const</span> <span class="code-var">developer</span> <span class="code-op">=</span> <span class="code-br">{</span>
+        </div>
+
+        <h1 class="hero-name">
+          <span class="name-first">Anisha</span>
+          <span class="name-last">Kumari</span>
+        </h1>
+
+        <div class="hero-role" aria-live="polite">
+          <span class="code-str">"</span><span id="typedRole" class="typed-text"></span><span class="cursor" aria-hidden="true">|</span><span class="code-str">"</span>
+        </div>
+
+        <div class="hero-code-close" aria-hidden="true"><span class="code-br">}</span></div>
+
+        <p class="hero-desc">
+          MCA graduate crafting <strong>cross-platform mobile</strong> &amp; <strong>web applications</strong>
+          with React Native, Firebase &amp; Django. Passionate about <strong>scalable software</strong>
+          and AI-assisted development.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary" id="heroViewProjects">
+            <span aria-hidden="true">&#9654;</span> View Projects
+          </a>
+          <a href="#contact" class="btn btn-outline" id="heroContact">
+            <span aria-hidden="true">&#9993;</span> Contact Me
+          </a>
+          <a href="assets/Anisha_Kumari_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" id="heroResume" aria-label="Download Resume (opens PDF in new tab)">
+            <span aria-hidden="true">&#128196;</span> Download Resume
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="mailto:anisha14072004@gmail.com" class="social-link" id="heroEmail" aria-label="Email Anisha">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span>Gmail</span>
+          </a>
+          <a href="https://www.linkedin.com/in/anisha-kumari-5ba942250" target="_blank" rel="noopener noreferrer" class="social-link" id="heroLinkedIn" aria-label="LinkedIn Profile (opens in new tab)">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19 3H5C3.895 3 3 3.895 3 5v14c0 1.105.895 2 2 2h14c1.105 0 2-.895 2-2V5c0-1.105-.895-2-2-2zM9 17H6.477v-7H9v7zM7.694 8.717c-.771 0-1.286-.514-1.286-1.2s.514-1.2 1.371-1.2c.771 0 1.286.514 1.286 1.2s-.514 1.2-1.371 1.2zM18 17h-2.442v-3.826c0-1.058-.651-1.302-.895-1.302s-1.058.163-1.058 1.302V17h-2.523v-7h2.523v.977C13.93 10.407 14.581 10 15.802 10 17.023 10 18 10.977 18 13.174V17z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/ak-kb" target="_blank" rel="noopener noreferrer" class="social-link" id="heroGitHub" aria-label="GitHub Profile (opens in new tab)">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Profile Image -->
+      <div class="hero-visual">
+        <div class="profile-wrap">
+          <div class="profile-ring" aria-hidden="true"></div>
+          <div class="profile-img-container">
+            <img
+              src="assets/profile.jpg"
+              alt="Anisha Kumari — React Native Developer"
+              class="profile-img"
+              id="profileImg"
+              loading="eager"
+            />
+          </div>
+          <div class="tech-badges" aria-hidden="true">
+            <span class="tech-badge b1">React Native</span>
+            <span class="tech-badge b2">TypeScript</span>
+            <span class="tech-badge b3">Firebase</span>
+            <span class="tech-badge b4">Django</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+      <span>scroll</span>
+      <div class="scroll-bar"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="section" aria-label="About me">
+    <div class="container">
+      <h2 class="section-title">Professional Summary</h2>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            Motivated <strong>MCA graduate</strong> with hands-on experience in
+            <strong>React Native, Firebase, Django,</strong> and
+            <strong>AI/ML Data Annotation</strong>. Skilled in developing
+            cross-platform mobile and web applications, with a strong interest
+            in building scalable software and contributing as a
+            <strong>Software Developer</strong> or <strong>React Native Developer</strong>.
+          </p>
+          <p style="margin-top:1rem;">
+            I enjoy solving real-world problems through clean, efficient code
+            and am always eager to learn new technologies and best practices.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat-box reveal" id="s1"><span class="stat-num">2</span><span class="stat-lbl">Internships</span></div>
+            <div class="stat-box reveal" id="s2"><span class="stat-num">3+</span><span class="stat-lbl">Projects</span></div>
+            <div class="stat-box reveal" id="s3"><span class="stat-num">5</span><span class="stat-lbl">Certifications</span></div>
+            <div class="stat-box reveal" id="s4"><span class="stat-num">15+</span><span class="stat-lbl">Technologies</span></div>
+          </div>
+        </div>
+
+        <div class="about-info reveal">
+          <div class="info-card">
+            <div class="info-item">
+              <span class="info-icon" aria-hidden="true">📧</span>
+              <a href="mailto:anisha14072004@gmail.com" class="info-link" id="aboutEmail">anisha14072004@gmail.com</a>
+            </div>
+            <div class="info-item">
+              <span class="info-icon" aria-hidden="true">📞</span>
+              <a href="tel:+917033450376" class="info-link" id="aboutPhone">+91 7033450376</a>
+            </div>
+            <div class="info-item">
+              <span class="info-icon" aria-hidden="true">🔗</span>
+              <a href="https://www.linkedin.com/in/anisha-kumari-5ba942250" target="_blank" rel="noopener noreferrer" class="info-link" id="aboutLinkedIn">LinkedIn Profile</a>
+            </div>
+            <div class="info-item">
+              <span class="info-icon" aria-hidden="true">🐙</span>
+              <a href="https://github.com/ak-kb" target="_blank" rel="noopener noreferrer" class="info-link" id="aboutGitHub">github.com/ak-kb</a>
+            </div>
+            <div class="terminal-block" aria-label="Status terminal">
+              <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">status --check</span></div>
+              <div class="term-line"><span class="term-out">open_to_work: <span class="term-green">true</span></span></div>
+              <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">node --version</span></div>
+              <div class="term-line"><span class="term-out">v20.11.0 ✓</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="section section-alt" aria-label="Technical skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal" id="skillLang">
+          <div class="skill-card-header">
+            <span class="skill-icon" aria-hidden="true">💻</span>
+            <h3 class="skill-category-title">Programming Languages</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" id="skillMobile">
+          <div class="skill-card-header">
+            <span class="skill-icon" aria-hidden="true">📱</span>
+            <h3 class="skill-category-title">Mobile &amp; Web Technologies</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag featured">React Native</span>
+            <span class="skill-tag featured">Expo</span>
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" id="skillBackend">
+          <div class="skill-card-header">
+            <span class="skill-icon" aria-hidden="true">🗄️</span>
+            <h3 class="skill-category-title">Backend &amp; Database</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag featured">Django</span>
+            <span class="skill-tag featured">Firebase</span>
+            <span class="skill-tag">Cloud Firestore</span>
+            <span class="skill-tag">Firebase Storage</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">MongoDB Compass</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" id="skillTools">
+          <div class="skill-card-header">
+            <span class="skill-icon" aria-hidden="true">🔧</span>
+            <h3 class="skill-category-title">Tools &amp; Core Concepts</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Android Studio</span>
+            <span class="skill-tag">Firebase Console</span>
+            <span class="skill-tag">OOP</span>
+            <span class="skill-tag">CRUD Operations</span>
+            <span class="skill-tag">Authentication</span>
+            <span class="skill-tag">API Integration</span>
+            <span class="skill-tag">Responsive UI</span>
+            <span class="skill-tag">Debugging &amp; Testing</span>
+            <span class="skill-tag">Problem Solving</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section id="experience" class="section" aria-label="Work experience">
+    <div class="container">
+      <h2 class="section-title">Internships</h2>
+
+      <div class="timeline">
+
+        <article class="timeline-item reveal" id="exp1">
+          <div class="tl-line" aria-hidden="true">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">React Native Developer Intern</h3>
+                <span class="tl-sub">(AI-Assisted Development)</span>
+              </div>
+              <span class="tl-badge done">Completed</span>
+            </div>
+            <div class="tl-meta">
+              <span class="tl-company">💻 ToonsCode</span>
+              <time class="tl-period" datetime="2026-06">June 2026 – Jul 2026</time>
+            </div>
+            <ul class="tl-bullets" role="list">
+              <li>Developed cross-platform mobile application features using React Native, Expo, JavaScript, and TypeScript.</li>
+              <li>Built reusable UI components and integrated REST APIs following modern development practices.</li>
+              <li>Utilized AI-assisted development tools to improve debugging, productivity, and code quality.</li>
+              <li>Collaborated using Git to develop scalable and maintainable Android and iOS applications.</li>
+            </ul>
+            <div class="tl-tech" aria-label="Technologies used">
+              <span>React Native</span><span>Expo</span><span>TypeScript</span><span>REST APIs</span><span>Git</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal" id="exp2">
+          <div class="tl-line" aria-hidden="true">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">Process Executive Intern</h3>
+                <span class="tl-sub">(AI/ML Data Annotation)</span>
+              </div>
+              <span class="tl-badge done">Completed</span>
+            </div>
+            <div class="tl-meta">
+              <span class="tl-company">🤖 Augtech NextWealth IT Services Pvt. Ltd.</span>
+              <time class="tl-period" datetime="2026-02">Feb 2026 – May 2026</time>
+            </div>
+            <ul class="tl-bullets" role="list">
+              <li>Performed AI/ML data annotation, validation, and quality assurance tasks.</li>
+              <li>Ensured data accuracy while maintaining privacy and compliance standards.</li>
+              <li>Worked with large datasets to support AI model development.</li>
+            </ul>
+            <div class="tl-tech" aria-label="Technologies used">
+              <span>AI/ML</span><span>Data Annotation</span><span>QA</span><span>Data Privacy</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="section section-alt" aria-label="Projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-grid">
+
+        <article class="project-card reveal" id="proj1">
+          <div class="proj-header">
+            <div class="proj-icon" aria-hidden="true">🤖</div>
+            <a href="https://github.com/ak-kb" target="_blank" rel="noopener noreferrer" class="proj-gh-link" id="proj1Link" aria-label="View InAppCode on GitHub">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+          </div>
+          <h3 class="proj-name">InAppCode</h3>
+          <p class="proj-subtitle">AI-Powered Coding Learning Platform</p>
+          <p class="proj-desc">
+            Developed Learning Path Module, reusable components, AsyncStorage,
+            progress tracking, and module unlocking features for an interactive
+            coding education platform.
+          </p>
+          <div class="proj-tech">
+            <span>React Native</span><span>Expo</span><span>TypeScript</span>
+            <span>MongoDB</span><span>AsyncStorage</span><span>REST APIs</span>
+          </div>
+          <a href="https://github.com/ak-kb" target="_blank" rel="noopener noreferrer" class="proj-action-btn" id="proj1Btn" aria-label="View InAppCode on GitHub">
+            View on GitHub →
+          </a>
+        </article>
+
+        <article class="project-card reveal" id="proj2">
+          <div class="proj-header">
+            <div class="proj-icon" aria-hidden="true">🛒</div>
+            <a href="https://github.com/ak-kb" target="_blank" rel="noopener noreferrer" class="proj-gh-link" id="proj2Link" aria-label="View QuickCart on GitHub">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+          </div>
+          <h3 class="proj-name">QuickCart</h3>
+          <p class="proj-subtitle">Grocery Shopping App</p>
+          <p class="proj-desc">
+            Built authentication, shopping cart, product catalog &amp; categories,
+            address management, order tracking and Firestore integration for a
+            complete grocery shopping experience.
+          </p>
+          <div class="proj-tech">
+            <span>React Native</span><span>Expo</span><span>Firebase</span>
+            <span>Firestore</span><span>TypeScript</span>
+          </div>
+          <a href="https://github.com/ak-kb" target="_blank" rel="noopener noreferrer" class="proj-action-btn" id="proj2Btn" aria-label="View QuickCart on GitHub">
+            View on GitHub →
+          </a>
+        </article>
+
+        <article class="project-card reveal" id="proj3">
+          <div class="proj-header">
+            <div class="proj-icon" aria-hidden="true">📊</div>
+            <a href="https://github.com/ak-kb" target="_blank" rel="noopener noreferrer" class="proj-gh-link" id="proj3Link" aria-label="View Expense Tracker on GitHub">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+          </div>
+          <h3 class="proj-name">Expense Tracker</h3>
+          <p class="proj-subtitle">Personal Finance Management App</p>
+          <p class="proj-desc">
+            Developed expense management application with authentication,
+            interactive dashboard and comprehensive reports for tracking
+            personal finances efficiently.
+          </p>
+          <div class="proj-tech">
+            <span>Python</span><span>Django</span><span>SQLite</span>
+            <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+          </div>
+          <a href="https://github.com/ak-kb" target="_blank" rel="noopener noreferrer" class="proj-action-btn" id="proj3Btn" aria-label="View Expense Tracker on GitHub">
+            View on GitHub →
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION SECTION ===== -->
+  <section id="education" class="section" aria-label="Education and certifications">
+    <div class="container">
+      <h2 class="section-title">Education &amp; Certifications</h2>
+
+      <div class="edu-grid">
+
+        <!-- Education -->
+        <div class="edu-col">
+          <h3 class="edu-col-title">🎓 Education</h3>
+          <div class="edu-cards">
+
+            <article class="edu-card reveal" id="edu1">
+              <time class="edu-year">2024 – 2026</time>
+              <h4 class="edu-degree">Master of Computer Applications (MCA)</h4>
+              <p class="edu-college">RSR Rungta College of Engineering &amp; Technology</p>
+              <span class="edu-status completed">Completed</span>
+            </article>
+
+            <article class="edu-card reveal" id="edu2">
+              <time class="edu-year">2021 – 2024</time>
+              <h4 class="edu-degree">Bachelor of Computer Applications (BCA)</h4>
+              <p class="edu-college">Sai College (Affiliated to Hemchand Yadav/Durg University)</p>
+              <span class="edu-status completed">Completed</span>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="cert-col">
+          <h3 class="edu-col-title">🏆 Certifications</h3>
+          <div class="cert-list">
+
+            <div class="cert-item reveal" id="cert1">
+              <span class="cert-year">2026</span>
+              <div class="cert-details">
+                <span class="cert-name">React Native Developer Internship (AI-Assisted Development)</span>
+                <span class="cert-org">Toonscode</span>
+              </div>
+            </div>
+
+            <div class="cert-item reveal" id="cert2">
+              <span class="cert-year">2026</span>
+              <div class="cert-details">
+                <span class="cert-name">Cyber Job Simulation</span>
+                <span class="cert-org">Deloitte</span>
+              </div>
+            </div>
+
+            <div class="cert-item reveal" id="cert3">
+              <span class="cert-year">2026</span>
+              <div class="cert-details">
+                <span class="cert-name">Data Protection &amp; Privacy Regulations</span>
+                <span class="cert-org">NextWealth</span>
+              </div>
+            </div>
+
+            <div class="cert-item reveal" id="cert4">
+              <span class="cert-year">2026</span>
+              <div class="cert-details">
+                <span class="cert-name">Volunteer – International Conference</span>
+                <span class="cert-org">RSR Rungta College of Engineering &amp; Technology (April 2026)</span>
+              </div>
+            </div>
+
+            <div class="cert-item reveal" id="cert5">
+              <span class="cert-year">2025</span>
+              <div class="cert-details">
+                <span class="cert-name">Digital Application Fundamental (STEM)</span>
+                <span class="cert-org">Future Skills Prime</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section section-alt" aria-label="Contact me">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+
+      <p class="contact-intro reveal">
+        I'm <strong>open to new opportunities</strong> — full-time roles, internships, or freelance projects.
+        Feel free to reach out through any of the channels below.
+      </p>
+
+      <div class="contact-cards-centered reveal">
+        <a href="mailto:anisha14072004@gmail.com" class="contact-card" id="contactEmail">
+          <div class="cc-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="cc-text">
+            <span class="cc-label">Email</span>
+            <span class="cc-value">anisha14072004@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="tel:+917033450376" class="contact-card" id="contactPhone">
+          <div class="cc-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div class="cc-text">
+            <span class="cc-label">Phone</span>
+            <span class="cc-value">+91 7033450376</span>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/anisha-kumari-5ba942250" target="_blank" rel="noopener noreferrer" class="contact-card" id="contactLinkedIn">
+          <div class="cc-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M19 3H5C3.895 3 3 3.895 3 5v14c0 1.105.895 2 2 2h14c1.105 0 2-.895 2-2V5c0-1.105-.895-2-2-2zM9 17H6.477v-7H9v7zM7.694 8.717c-.771 0-1.286-.514-1.286-1.2s.514-1.2 1.371-1.2c.771 0 1.286.514 1.286 1.2s-.514 1.2-1.371 1.2zM18 17h-2.442v-3.826c0-1.058-.651-1.302-.895-1.302s-1.058.163-1.058 1.302V17h-2.523v-7h2.523v.977C13.93 10.407 14.581 10 15.802 10 17.023 10 18 10.977 18 13.174V17z"/></svg>
+          </div>
+          <div class="cc-text">
+            <span class="cc-label">LinkedIn</span>
+            <span class="cc-value">anisha-kumari-5ba942250</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/ak-kb" target="_blank" rel="noopener noreferrer" class="contact-card" id="contactGitHub">
+          <div class="cc-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          </div>
+          <div class="cc-text">
+            <span class="cc-label">GitHub</span>
+            <span class="cc-value">github.com/ak-kb</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo" aria-label="Anisha Kumari">
+        <span class="bracket">&lt;</span><span class="logo-text">AK</span><span class="bracket">/&gt;</span>
+      </div>
+      <p class="footer-copy">
+        Crafted with <span aria-label="love">❤️</span> &amp; <span class="accent-text">code</span> by Anisha Kumari &copy; 2026
+      </p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/anisha-kumari-5ba942250" target="_blank" rel="noopener noreferrer" id="footerLinkedIn" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://github.com/ak-kb" target="_blank" rel="noopener noreferrer" id="footerGitHub" aria-label="GitHub">GitHub</a>
+        <a href="mailto:anisha14072004@gmail.com" id="footerEmail" aria-label="Email">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
